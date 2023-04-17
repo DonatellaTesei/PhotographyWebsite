@@ -1,0 +1,354 @@
+.top *,
+.top,
+.background {
+    background-color: black;
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red
+}
+
+input.ng-valid.ng-touched {
+    border: 1px solid rgb(64, 165, 36)
+}
+
+.top {
+    margin: 0px;
+    padding-top: 100px;
+}
+
+#head {
+    padding-bottom: 5rem;
+    text-align: center;
+    color: white;
+    font-size: 45px;
+}
+
+#text1 {
+    width: auto;
+}
+
+#Bio {
+    font-size: 3rem;
+    font-family: 'EB Garamond', serif;
+}
+
+h5 {
+    display: flex;
+    color: white;
+    margin-right: 3rem;
+    font-family: 'Libre Baskerville', serif;
+}
+
+#img1 {
+    width: 80%;
+}
+
+#h21 {
+    color: white;
+    z-index: 1;
+    text-align: center;
+    font-family: 'EB Garamond', serif;
+}
+
+h1 {
+    color: white;
+    font-family: 'EB Garamond', serif;
+    margin: 0px;
+}
+
+
+/* contact for start ------------------------------------------------------------------------------------------- */
+
+.background {
+    margin: 0px;
+    display: flex;
+    min-height: 55vh;
+}
+
+.container {
+    flex: 0 1 900px;
+    margin: auto;
+}
+
+.screen {
+    position: relative;
+    background: rgb(42, 42, 42, 0.3);
+    border-radius: 10px;
+}
+
+.screen-body {
+    display: flex;
+}
+
+.screen-body-item {
+    padding: 30px;
+}
+
+.screen-body-item.left {
+    display: flex;
+    flex-direction: column;
+}
+
+.app-title {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    color: white;
+    /* color: #ea1d6f; */
+    font-size: 26px;
+    font-family: 'EB Garamond', serif;
+}
+
+.app-title:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 50px;
+    height: 2px;
+    /* background: #ea1d6f; */
+    background: white;
+}
+
+.app-contact {
+    margin-top: auto;
+    font-size: 8px;
+    color: #888;
+}
+
+.app-form-group {
+    margin-bottom: 15px;
+    font-family: 'Libre Baskerville', serif;
+}
+
+.app-form-group.buttons {
+    margin-bottom: 0;
+    text-align: right;
+}
+
+.app-form-control {
+    width: 100%;
+    padding: 10px 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #666;
+    color: #e3d7d7;
+    font-size: 14px;
+    outline: none;
+    transition: border-color .2s;
+}
+
+.app-form-control::placeholder {
+    color: #868383;
+}
+
+.app-form-control:focus {
+    border-bottom-color: #c20303;
+}
+
+.app-form-button {
+    background: none;
+    border: none;
+    color: white;
+    /* color: #ea1d6f; */
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+}
+
+.app-form-button:hover {
+    color: #b9134f;
+}
+
+
+/* --------------------------------------------------------------------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+.profile-card {
+    width: 200px;
+    height: 200px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 50%;
+    box-shadow: 0 0 22px #3336;
+    transition: .6s;
+}
+
+.profile-card:hover {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    height: 400px;
+}
+
+.profile-card img {
+    width: 100%;
+    height: 150px;
+    /* height: 100%; */
+    transition: .6s;
+    z-index: 10;
+}
+
+.profile-card:hover img {
+    transform: translateY(-60px);
+}
+
+img {
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 22px #3336;
+    transition: .6s;
+}
+
+.profile-card:hover img {
+    border-radius: 10px;
+}
+
+.caption {
+    text-align: center;
+    transform: translateY(-70px);
+    opacity: 0;
+    transition: .6s;
+}
+
+.profile-card:hover .caption {
+    opacity: 1;
+}
+
+.caption h3 {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.caption p {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    top: -25px;
+    font-size: 15px;
+    color: #0c52a1;
+}
+
+.social-links {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    position: relative;
+    top: -35px;
+}
+
+@media screen and (max-width: 576px) {
+    .profile-card {
+        margin-top: 45px;
+    }
+    kkk {
+        flex-direction: column;
+    }
+    .flex {
+        display: flex;
+        flex-direction: column;
+    }
+    .rewiev {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    #text1 {
+        width: 65%!important;
+    }
+    #middle-text {
+        width: 65%!important;
+        margin-left: 3.4rem!important;
+    }
+    .img-fluid {
+        align-items: center!important;
+        margin: auto!important;
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 577px) and (max-width: 767px) {
+    .profile-card {
+        margin-top: 45px;
+    }
+    kkk {
+        flex-direction: column;
+    }
+    .flex {
+        display: flex;
+        flex-direction: column;
+    }
+    .rewiev {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    #text1 {
+        width: 65%!important;
+    }
+    #middle-text {
+        width: 55%!important;
+        margin-left: 8.1rem!important;
+    }
+    .img-fluid {
+        align-items: center!important;
+        margin: auto!important;
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    #img1 {
+        width: 35vw;
+    }
+    .kkk {
+        display: flex;
+        flex-direction: row;
+    }
+    h5 {
+        padding: 0;
+        margin: 0;
+        width: 50%;
+    }
+    #text1 {
+        width: 65%!important;
+    }
+    #middle-text {
+        width: 95%!important;
+        margin-left: 3.4rem!important;
+    }
+    .img-fluid {
+        align-items: center!important;
+        margin: auto!important;
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    #img1 {
+        width: 30vw;
+    }
+    #middle-text {
+        margin-top: 5rem!important;
+    }
+    .img-fluid {
+        align-items: center!important;
+        margin: auto!important;
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 2000px) {
+    #img1 {
+        width: 30vw;
+    }
+    #middle-text {
+        margin-top: 5rem!important;
+    }
+    .img-fluid {
+        align-items: center!important;
+        margin: auto!important;
+        width: 60%;
+    }
+}
