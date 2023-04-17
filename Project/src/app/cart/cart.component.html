@@ -1,44 +1,46 @@
 <app-hero-cart></app-hero-cart>
 <div class="box">
 
-    <div class="container w-60 pt-3 mb-5">
+    <div class="container w-60 pt-sm-2 pt-md-3 pt-lg-3 pt-xl-3 mb-5">
         <div class="header" *ngIf="cart.length!=0">
-            <h1 class="cart-title">Cart
+            <h1 class="cart-title ms-1 ms-sm-1">Cart
             </h1>
             <hr>
         </div>
         <div class="row row-cols-xl-2 row-cols-lg-2 row-cols-md-1 row-cols-sm-1" *ngFor="let val of cart; let i = index">
 
-            <div class="img-fluid" style="width:20%">
+            <div class="img-fluid">
                 <img class="img-thumbnail" src="{{ val.image }}" alt="{{val.name}} "></div>
-            <div class="text-sm-start text-wrap mt-4 ">
-                <h4 class="text-uppercase fw-bold ">{{val.name}}</h4>
-                <p class="lh-base ">{{val.description}}</p>
-                <p class="lh-base "><b>Amount: </b>{{val.qtty}}</p>
-                <p class="lh-base "><b>Price:</b> {{val.price}} Euro</p>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end ">
-                    <button class="btn btn-outline-danger btn-sm me-md-2" style=" font-family: 'Libre Baskerville', serif" (click)="removeItem(id)">Remove</button></div>
+            <div class="text-sm-start text-wrap  mt-sm-1 mt-md-1">
+                <h5 class="text-uppercase fw-bold" style="font-size: 1.2rem;">{{val.name}}</h5>
+                <p class="lh-sm" style="font-size: 0.8rem;">{{val.description}}</p>
+                <p class="lh-sm" style="font-size: 0.8rem;"><b>Amount: </b>{{val.qtty}}</p>
+                <p class="lh-sm" style="font-size: 0.8rem;"><b>Price:</b> {{val.price}} Euro</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end pb-5">
+                    <button class="btn btn-outline-danger btn-sm me-md-2" style="font-family: 'Libre Baskerville', serif;font-size: 0.8rem;" (click)="removeItem(id)">Remove</button></div>
             </div>
             <br>
+            <br>
+
         </div>
         <div class="button" *ngIf="cart.length!=0">
             <hr>
-            <button class="btn btn-danger" style=" font-family: 'Libre Baskerville', serif" (click)="clearCart()">Empty Cart</button>
+            <button class="btn btn-danger" style="font-family: 'Libre Baskerville', serif; font-size: 0.8rem;" (click)="clearCart()">Empty Cart</button>
         </div>
 
     </div>
     <div class="summary pt-3 mb-5" *ngIf="cart.length!=0">
-        <h2 class="summary">Summary</h2>
-        <p class="total1">No. of items: {{cart.length}}</p>
-        <h4 class="total2"><b>Total (including VAT): </b>{{total.toFixed(2)}} Euro</h4>
+        <h2 class="summary ms-3 ms-sm-5 ps-sm-4">Summary</h2>
+        <p class="total1 ms-3 ms-sm-5 ps-sm-4">No. of items: {{cart.length}}</p>
+        <h4 class="total2 ms-3 ms-sm-5 ps-sm-4"><b>Total (including VAT): </b>{{total.toFixed(2)}} Euro</h4>
 
     </div>
-    <br>
+
     <br>
     <div class="myCont">
         <div class=" customorder" *ngIf="cart.length!=0">
-            <h1 class="order2 text-center">Order Form</h1>
-            <h5 class="total3 text-center"> Please fill up your info for the delivery</h5>
+            <h2 class="order2 ms-3 ms-sm-3 ps-sm-1 ms-md-5 ps-md-4">Order Form</h2>
+            <p class="total3 ms-3 ms-sm-3 ps-sm-1 ms-md-5 ps-md-4 text-wrap"> Please fill up your info for the delivery</p>
             <br>
             <div class="orderForm">
                 <form [formGroup]="myForm" (ngSubmit)="printingValueInConsole()">

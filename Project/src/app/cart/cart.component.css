@@ -4,7 +4,6 @@
     color: black;
     font-size: 3rem;
     font-weight: bold;
-    margin-left: 1rem;
 }
 
 .summary {
@@ -13,21 +12,18 @@
     color: black;
     font-size: 2rem;
     font-weight: bold;
-    margin-left: 10rem;
 }
 
 .total1 {
     text-align: left;
-    margin-left: 10rem;
     font-family: 'Libre Baskerville', serif;
     font-size: 1rem;
 }
 
 .total2 {
     text-align: left;
-    margin-left: 10rem;
     font-family: 'Libre Baskerville', serif;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .order h1 {
@@ -66,6 +62,18 @@
 .box {
     padding-top: 5rem;
     background-color: whitesmoke;
+}
+
+.img-thumbnail {
+    image-rendering: optimizeQuality;
+    object-fit: cover;
+    width: 6rem;
+    height: 10rem;
+}
+
+.img-fluid {
+    width: 9rem;
+    height: 13rem;
 }
 
 input[type=text],
@@ -118,4 +126,59 @@ input[type=submit]:hover {
 
 input.ng-invalid.ng-touched {
     border: 1px solid red
+}
+
+
+/* media query */
+
+@media screen and (max-width: 576px) {
+    .orderForm {
+        width: 100vw;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        margin: auto;
+    }
+    .btn-outline-danger {
+        width: 20%;
+    }
+}
+
+@media screen and (min-width: 577px) and (max-width: 767px) {
+    .btn-outline-danger {
+        width: 20%;
+    }
+    .orderForm {
+        width: 70vw;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        margin: auto;
+    }
+    .order2 {
+        margin-left: 4.3rem!important;
+    }
+    .total3 {
+        margin-left: 4.3rem!important;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    .orderForm {
+        width: 40vw;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 2000px) {
+    .orderForm {
+        width: 40vw;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        margin: auto;
+    }
 }
