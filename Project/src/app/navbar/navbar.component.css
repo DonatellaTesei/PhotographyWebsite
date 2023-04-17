@@ -1,0 +1,282 @@
+.menu-icon {
+    display: none;
+}
+
+.primaryNav {
+    font-family: 'EB Garamond', serif;
+    font-weight: 900;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background-color: rgb(0, 0, 0, 0.2);
+    /* background-color: hsla(0 0% 100%/ 0.2); */
+    backdrop-filter: blur(1rem);
+    border-radius: 1px;
+    font-size: 0;
+    z-index: 1000;
+}
+
+.primaryNav a {
+    line-height: 50px;
+    height: 100%;
+    font-size: 15px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}
+
+.primaryNav li {
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .primaryNav .animation {
+        position: absolute;
+        height: 100%;
+        top: 0;
+        z-index: 0;
+        transition: all .5s ease 0s;
+        border-radius: 8px;
+    }
+    .navLink:nth-child(1) {
+        width: 100px;
+    }
+    .navLink:nth-child(2) {
+        width: 110px;
+    }
+    .navLink:nth-child(3) {
+        width: 100px;
+    }
+    .navLink:nth-child(4) {
+        width: 160px;
+    }
+    .navLink:nth-child(5) {
+        width: 120px;
+    }
+    .primaryNav .start-home,
+    li:nth-child(1).active~.animation {
+        width: 100px;
+        left: 0;
+        background-color: #1abc9c;
+    }
+    .primaryNav .start-about,
+    li:nth-child(2).active~.animation {
+        width: 110px;
+        left: 100px;
+        background-color: #e74c3c;
+    }
+    .primaryNav .start-gallery,
+    li:nth-child(3).active~.animation {
+        width: 100px;
+        left: 200px;
+        background-color: #3498db;
+    }
+    .primaryNav .start-details,
+    li:nth-child(4).active~.animation {
+        width: 100px;
+        left: 310px;
+        background-color: #9b59b6;
+    }
+    .primaryNav .start-contact,
+    li:nth-child(5).active~.animation {
+        width: 120px;
+        left: 470px;
+        background-color: #e67e22;
+    }
+    .primaryNav .start-home,
+    li:nth-child(1):hover~.animation {
+        width: 100px;
+        left: 0;
+        background-color: #1abc9c;
+    }
+    .primaryNav .start-about,
+    li:nth-child(2):hover~.animation {
+        width: 110px;
+        left: 100px;
+        background-color: #e74c3c;
+    }
+    .primaryNav .start-gallery,
+    li:nth-child(3):hover~.animation {
+        width: 100px;
+        left: 200px;
+        background-color: #3498db;
+    }
+    .primaryNav .start-details,
+    li:nth-child(4):hover~.animation {
+        width: 100px;
+        left: 310px;
+        background-color: #9b59b6;
+    }
+    .primaryNav .start-contact,
+    li:nth-child(5):hover~.animation {
+        width: 110px;
+        left: 400px;
+        background-color: #e67e22;
+    }
+    .start-home {
+        margin-left: 30px;
+    }
+}
+
+.flex {
+    display: flex;
+}
+
+li:hover .dropdown,
+li:focus .dropdown {
+    height: 300px;
+}
+
+.dropdown a {
+    width: 100%;
+    border-radius: 1rem;
+    background-color: transparent;
+    background-position: -100px;
+}
+
+.dropdown a:hover,
+.dropdown a:focus {
+    background-image: linear-gradient(to left, transparent, #3498db);
+    background-position: 0;
+    transition: background ease 0.7s;
+}
+
+.dropdown {
+    position: absolute;
+    right: -15px;
+    box-shadow: 0 0.3rem 1rem hsla(0 0% 100%/ 0.5);
+    min-width: 8rem;
+    padding: 0;
+    border-radius: 1rem;
+    height: 0;
+    overflow: hidden;
+    transition: height ease 0.4s;
+    z-index: 1100;
+    background-color: hsla(0 0% 0%/ 0.8);
+}
+
+@media (max-width: 768px) {
+    .primaryNav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .primaryNav {
+        height: 100%;
+        width: 40vw;
+        margin-left: -320px;
+        transition: all 0.5s ease-out;
+        background-color: hsla(0 0% 0%/ 0.4);
+        backdrop-filter: blur(1rem);
+    }
+    .primaryNav ul>li>.navLink {
+        width: 100%;
+        text-align: center;
+        display: block;
+    }
+    .primaryNav>ul>li {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding-block: 1rem;
+    }
+    .primaryNav .animation {
+        position: absolute;
+        width: 100%;
+        height: 80px;
+        top: 5px;
+        z-index: 0;
+        transition: all .5s ease 0s;
+        border-radius: 8px;
+    }
+    .primaryNav>ul {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .primaryNav .start-home,
+    li:nth-child(1).active~.animation {
+        width: 100%;
+        margin-left: 0;
+        top: 0;
+        left: 0;
+        background-color: #1abc9c;
+    }
+    .primaryNav .start-home,
+    li:nth-child(2).active~.animation {
+        width: 100%;
+        top: 80px;
+        background-color: #e74c3c;
+    }
+    .primaryNav .start-gallery,
+    li:nth-child(3).active~.animation {
+        top: 160px;
+        background-color: #3498db;
+    }
+    .primaryNav .start-details,
+    li:nth-child(4).active~.animation {
+        top: 240px;
+        background-color: #9b59b6;
+    }
+    .primaryNav .start-contact,
+    li:nth-child(5).active~.animation {
+        top: 320px;
+        background-color: #e67e22;
+    }
+    .primaryNav .start-home,
+    li:nth-child(1):hover~.animation {
+        width: 100%;
+        margin-left: 0;
+        top: 0;
+        left: 0;
+        background-color: #1abc9c;
+    }
+    .primaryNav .start-home,
+    li:nth-child(2):hover~.animation {
+        width: 100%;
+        top: 80px;
+        background-color: #e74c3c;
+    }
+    .primaryNav .start-gallery,
+    li:nth-child(3):hover~.animation {
+        top: 160px;
+        background-color: #3498db;
+    }
+    .primaryNav .start-details,
+    li:nth-child(4):hover~.animation {
+        top: 240px;
+        background-color: #9b59b6;
+    }
+    .primaryNav .start-contact,
+    li:nth-child(5):hover~.animation {
+        top: 320px;
+        background-color: #e67e22;
+    }
+    .menu-icon {
+        display: block;
+        position: fixed;
+        width: 3rem;
+        aspect-ratio: 1;
+        top: 0.3rem;
+        left: 0.3rem;
+        z-index: 9999;
+        background-color: transparent;
+        font-size: 3rem;
+        background: url(../../assets/images/menu-white.png);
+        border: none;
+        cursor: pointer;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .primaryNav[data-visible="true"] {
+        margin-left: 0;
+    }
+    .menu-icon[aria-expanded="true"] {
+        background: url(../../assets/images/close-white.png);
+    }
+}

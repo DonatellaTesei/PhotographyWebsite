@@ -1,0 +1,12 @@
+.hero {
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    background-image: url("https://images.unsplash.com/photo-1530003869863-a1df77a829ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=944&q=80");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    padding-bottom: 2rem;
+}

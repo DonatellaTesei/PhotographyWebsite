@@ -1,0 +1,30 @@
+@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.4/css/lightgallery.css');
+@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.4/css/lg-zoom.css');
+body {
+  margin: 0;
+}
+
+.img-responsive{
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+ 
+object-fit: cover;
+object-position: center;
+  height: 500px;
+width: 100%;
+margin: 10px;
+
+}
+.img-responsive:hover {
+  transform: scale(1.05);
+ 
+}
+.gallery-item:hover {
+opacity: 0.4;
+ 
+}
+
+.text-center{
+  font-family: 'Libre Baskerville', serif;
+}
+

@@ -1,0 +1,28 @@
+<button (click)="onToggleSidenav()" class="myBtn menu-icon" aria-expanded="false"></button>
+<nav class="primaryNav" data-visible="false">
+
+    <ul class="flex outerList">
+        <li class="home" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+      true}">
+            <a (click)="toTop()" class=" navLink">Home</a>
+        </li>
+        <li routerLink="about" routerLinkActive="active"><a class="navLink" (click)="toTop()">About</a></li>
+        <li routerLinkActive="active">
+            <a routerLink="gallery" (click)="toTop()" class="gallery navLink">Gallery</a>
+            <ul class="dropdown" id="dropdown1">
+                <li><a routerLink="/gallery/cities-details">Cities</a></li>
+                <li><a routerLink="/gallery/architectural-details" href="#">Architecture</a></li>
+                <li><a routerLink="/gallery/landscapes-details" href="#">Landscapes</a></li>
+                <li><a routerLink="/gallery/wildelife-details" href="#">Wild life</a></li>
+                <li><a routerLink="/gallery/people-details" href="#">Earthlings</a></li>
+                <li><a routerLink="/gallery/streetfood-details" href="#">Streetfood</a></li>
+            </ul>
+
+        </li>
+        <li routerLink="/cart" routerLinkActive="active"><a (click)="toTop()" class="navLink"> Cart &nbsp; <span *ngIf="number > 0" class="badge rounded-pill" style="background-color: #9b59b6;" >{{number}}</span></a></li>
+        <li><a class="navLink" (click)="bottomPage()">Hire Me</a>
+
+        </li>
+        <div class="animation start-home"></div>
+    </ul>
+</nav>

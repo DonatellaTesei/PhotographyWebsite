@@ -1,0 +1,65 @@
+<app-hero-cart></app-hero-cart>
+<div class="box">
+
+    <div class="container w-60 pt-3 mb-5">
+        <div class="header" *ngIf="cart.length!=0">
+            <h1 class="cart-title">Cart
+            </h1>
+            <hr>
+        </div>
+        <div class="row row-cols-xl-2 row-cols-lg-2 row-cols-md-1 row-cols-sm-1" *ngFor="let val of cart; let i = index">
+
+            <div class="img-fluid" style="width:20%">
+                <img class="img-thumbnail" src="{{ val.image }}" alt="{{val.name}} "></div>
+            <div class="text-sm-start text-wrap mt-4 ">
+                <h4 class="text-uppercase fw-bold ">{{val.name}}</h4>
+                <p class="lh-base ">{{val.description}}</p>
+                <p class="lh-base "><b>Amount: </b>{{val.qtty}}</p>
+                <p class="lh-base "><b>Price:</b> {{val.price}} Euro</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end ">
+                    <button class="btn btn-outline-danger btn-sm me-md-2" style=" font-family: 'Libre Baskerville', serif" (click)="removeItem(id)">Remove</button></div>
+            </div>
+            <br>
+        </div>
+        <div class="button" *ngIf="cart.length!=0">
+            <hr>
+            <button class="btn btn-danger" style=" font-family: 'Libre Baskerville', serif" (click)="clearCart()">Empty Cart</button>
+        </div>
+
+    </div>
+    <div class="summary pt-3 mb-5" *ngIf="cart.length!=0">
+        <h2 class="summary">Summary</h2>
+        <p class="total1">No. of items: {{cart.length}}</p>
+        <h4 class="total2"><b>Total (including VAT): </b>{{total.toFixed(2)}} Euro</h4>
+
+    </div>
+    <br>
+    <br>
+    <div class="myCont">
+        <div class=" customorder" *ngIf="cart.length!=0">
+            <h1 class="order2 text-center">Order Form</h1>
+            <h5 class="total3 text-center"> Please fill up your info for the delivery</h5>
+            <br>
+            <div class="orderForm">
+                <form [formGroup]="myForm" (ngSubmit)="printingValueInConsole()">
+                    <label class="label" for="firstName">First Name: </label><br>
+                    <input class="input" id="firstName" type="text" formControlName="firstName">
+                    <br>
+                    <label class="label" for="lastName">Last Name: </label><br>
+                    <input class="input" id="lastName" type="text" formControlName="lastName">
+                    <br>
+                    <label class="label" for="dateOfBirth">Birthday: </label><br>
+                    <input class="input" id="dateOfBirth" type="date" formControlName="dateOfBirth">
+                    <br>
+                    <label class="label" for="address">Address: </label><br>
+                    <input class="input" id="address" type="text" formControlName="address">
+                    <br>
+                    <label class="label" for="email">Email: </label><br>
+                    <input class="input" id="email" type="text" formControlName="email">
+                    <br>
+                    <input class="input" [class.disabled]="!myForm.valid" [swal]="['', 'data submitted', 'success']" type="submit" class="btn btn-dark" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

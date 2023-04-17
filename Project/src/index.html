@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Project</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+        integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Overpass+Mono:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+
+</head>
+
+
+
+
+<body>
+
+
+
+
+
+    <app-root></app-root>
+
+
+
+    <script>
+        setInterval(() => {
+            const track = document.getElementById("image-track");
+            const handleOnDown = e => {
+                track.dataset.mouseDownAt = e.clientX;
+            }
+            const handleOnUp = (e) => {
+                track.dataset.mouseDownAt = "0";
+                if (track.dataset.prevPercentage == track.dataset.percentage && !e.target.classList.contains("mystyle")) {
+                    let img = document.getElementsByClassName("image");
+                    for (let i = 0; i < img.length; i++) {
+                        img[i].style.transform = "scale(0.4)";
+                        img[i].style.zIndex = "0";
+                        img[i].classList.remove("mystyle");
+                        e.target.style.transform = "scale(1.5)";
+                        e.target.style.zIndex = "1000";
+                    }
+                    e.target.classList.add("mystyle");
+                } else if (track.dataset.prevPercentage == track.dataset.percentage && e.target.classList.contains("mystyle")) {
+                    e.target.style.transform = "scale(1)";
+                    e.target.classList.remove("mystyle");
+                    let img = document.getElementsByClassName("image");
+                    for (let i = 0; i < img.length; i++) {
+                        img[i].style.transform = "scale(1)";
+                        img[i].style.zIndex = "0";
+                    }
+                } else {
+                    track.dataset.mouseDownAt = "0";
+                    track.dataset.prevPercentage = track.dataset.percentage;
+                }
+            }
+            const handleOnMove = e => {
+                if (track.dataset.mouseDownAt === "0") return;
+                const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
+                    maxDelta = window.innerWidth / 2;
+                const percentage = (mouseDelta / maxDelta) * -40,
+                    nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
+                    nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+                track.dataset.percentage = nextPercentage;
+                track.animate({
+                    transform: `translate(${nextPercentage}%, -50%)`
+                }, {
+                    duration: 1200,
+                    fill: "forwards"
+                });
+                for (const image of track.getElementsByClassName("image")) {
+                    image.animate({
+                        objectPosition: `${100 + nextPercentage}% center`
+                    }, {
+                        duration: 1200,
+                        fill: "forwards"
+                    });
+                }
+            }
+            let myHome = document.querySelector('.home');
+            if (myHome.classList.contains('active')) {
+                track.onmousedown = e => handleOnDown(e);
+                track.ontouchstart = e => handleOnDown(e.touches[0]);
+                track.onmouseup = e => handleOnUp(e);
+                track.ontouchend = e => handleOnUp(e.touches[0]);
+                track.onmousemove = e => handleOnMove(e);
+                track.ontouchmove = e => handleOnMove(e.touches[0]);
+                track.addEventListener("wheel", function (e) {
+                    imgs = document.getElementsByClassName("image");
+                    for (let i = 0; i < imgs.length; i++) {
+                        imgs[i].classList.remove("mystyle");
+                        imgs[i].style.transform = "scale(1)";
+                        imgs[i].style.zIndex = "0";
+                    }
+                })
+            }
+
+
+
+
+
+        }, 1000)
+    </script>
+
+
+
+</body>
+
+</html>

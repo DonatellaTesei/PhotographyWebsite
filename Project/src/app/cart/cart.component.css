@@ -1,0 +1,121 @@
+.cart-title {
+    text-align: left;
+    font-family: 'EB Garamond', serif;
+    color: black;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-left: 1rem;
+}
+
+.summary {
+    text-align: left;
+    font-family: 'EB Garamond', serif;
+    color: black;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-left: 10rem;
+}
+
+.total1 {
+    text-align: left;
+    margin-left: 10rem;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1rem;
+}
+
+.total2 {
+    text-align: left;
+    margin-left: 10rem;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.2rem;
+}
+
+.order h1 {
+    text-align: left;
+    font-family: 'EB Garamond', serif;
+    color: black;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.order h5 {
+    text-align: left;
+    font-family: 'EB Garamond', serif;
+    color: black;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.order2 {
+    font-family: 'EB Garamond', serif;
+    font-weight: bold;
+}
+
+.total3 {
+    font-family: 'Libre Baskerville', serif;
+}
+
+.label {
+    font-family: 'Libre Baskerville', serif;
+}
+
+.input {
+    font-family: 'Libre Baskerville', serif;
+}
+
+.box {
+    padding-top: 5rem;
+    background-color: whitesmoke;
+}
+
+input[type=text],
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Libre Baskerville', serif;
+}
+
+input[type=date],
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Libre Baskerville', serif;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Libre Baskerville', serif;
+}
+
+input[type=submit]:hover {
+    background-color: purple;
+}
+
+.orderForm {
+    width: 50vw;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin: auto;
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red
+}
