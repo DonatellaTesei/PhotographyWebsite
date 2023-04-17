@@ -34,19 +34,13 @@ ngOnInit(): void {
 
 clearCart() {
   this.cart = []; //in this way I overright an array with an empty array
-    return this.cart;
+  this.CS.clearCart();  
+  return this.cart;
   }
 
   removeItem(id:number){
-    this.qtty= 1;
-    this.cart.splice(id,1);
+    this.CS.removeItem(id);
   }
 
-  //method to print values of the input after the button is clicked
-printingValueInConsole(){
-  if(this.myForm.valid){
-    console.log(this.myForm.value); 
-  }
-}
 
 }
